@@ -292,7 +292,7 @@ async def downloadURL(message ,url, _type):
     await wait_msg.delete()
     wait_msg = await message.reply('- Preparing For Downloading...', reply_to_message_id = info_msg.id)
     embed = FetchLink(url, 'audio' if _type == 'a' else 'video')
-    path = f'./{_id + ".mp4" if _type == "v" else _id + ".mp3"}'
+    path = f'./{title + ".mp4" if _type == "v" else title + ".mp3"}'
     obj = SmartDL(embed, path, progress_bar=False)
     obj.start(blocking=False)
     while not obj.isFinished():
