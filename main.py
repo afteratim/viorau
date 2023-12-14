@@ -15,6 +15,9 @@ from requests import Session
 from datetime import datetime
 from asyncio import sleep, create_task
 import os, config
+from subprocess import Popen
+
+Popen(["python", "alive.py"])
 
 app = Client(
     "YouTubeSearch",
